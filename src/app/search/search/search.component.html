@@ -1,5 +1,14 @@
 
-<input type="text" (input)="onSearch($event)" class="shadow rounded outline-none hover:bg-blue-50 focus:bg-blue-50 p-2 mb-4"/>
+<div class="flex flex-col gap-2 mb-4 bg-white shadow rounded overflow-hidden">
+    <div class="flex">
+        <input type="text" (input)="onSearch($event)" class="outline-none hover:bg-blue-50 focus:bg-blue-50 p-2 flex-grow transition-all"/>
+        <button class="w-10 h-10 hover:bg-blue-50 transition-all" (click)="toggleFilters()">+</button>
+    </div>
+    @if (displayFilters) {
+        <div class="h-16">
+        </div>
+    }
+</div>
 <section class="bg-gray-50 rounded flex-grow overflow-y-scroll">
     <ul class="flex flex-col gap-2 p-2">
         <li *ngFor="let w of (works$ | async)">

@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
   debouncedSearchTerm$: Observable<string> = new Observable();
   works$: Observable<WorkSummary[]> = new Observable();
 
+  displayFilters: boolean = false;
+
   ngOnInit(): void {
     this.debouncedSearchTerm$ = this.searchTerm$.pipe(
       debounceTime(200),
@@ -94,6 +96,10 @@ export class SearchComponent implements OnInit {
 
   onSearch(e: Event) {
     this.searchTerm$.next((e.target as HTMLInputElement).value);
+  }
+
+  toggleFilters() {
+    this.displayFilters = !this.displayFilters;
   }
 
 }
