@@ -1,0 +1,17 @@
+
+<input type="text" (input)="onSearch($event)" class="shadow rounded outline-none hover:bg-blue-50 focus:bg-blue-50 p-2 mb-4"/>
+<section class="bg-gray-50 rounded flex-grow overflow-y-scroll">
+    <ul class="flex flex-col gap-2 p-2">
+        <li *ngFor="let w of (works$ | async)">
+            <a [routerLink]="'/work/' + w.id" routerLinkActive="active">
+                <div class="shadow rounded flex cursor-pointer hover:shadow-md transition-shadow bg-white text-blue-800">
+                    <div class="p-2">{{ w.title }}</div>
+                    <div>
+                        <div class="p-2"><span>{{ w.authors | list }}</span></div>
+                        <div class="p-2"><span>{{ w.tags | list }}</span></div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>

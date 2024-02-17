@@ -1,0 +1,11 @@
+<div class="p-4">
+    <ul>
+        @for (item of items; track null) {
+            <li>
+                <a [routerLink]="item.path" routerLinkActive="active" class="">
+                    <span>{{ item.name | titlecase }}</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
