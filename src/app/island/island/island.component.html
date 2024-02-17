@@ -1,7 +1,10 @@
 <div class="bg-blue-800 rounded text-white shadow-md">
-    @switch (show$ | async) {
+    @switch (display$ | async) {
         @case ('menu') {
             <popo-menu></popo-menu>
+        }
+        @case ('work') {
+            <popo-work-navigator [work]="work"></popo-work-navigator>
         }
     }
 </div>

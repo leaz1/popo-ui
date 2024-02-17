@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { WorkSummary } from '../../shared/models/work-summary.model';
+import { WorkSummary } from '../../shared/models/work-metadata.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

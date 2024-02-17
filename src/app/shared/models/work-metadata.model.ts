@@ -1,7 +1,6 @@
-export interface WorkDetails {
+export interface WorkMetadata {
     id: string;
     title: string;
     authors: string[];
     tags: string[];
-    text: string;
 }

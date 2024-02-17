@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, debounce, debounceTime, map } from 'rxjs';
-import { WorkSummary } from '../../shared/models/work-summary.model';
+import { WorkMetadata } from '../../shared/models/work-metadata.model';
 import { ListPipe } from '../../shared/pipes/list.pipe';
 import { RouterModule } from '@angular/router';
 
@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
 export class SearchComponent implements OnInit {
   searchTerm$: Subject<string> = new Subject();
   debouncedSearchTerm$: Observable<string> = new Observable();
-  works$: Observable<WorkSummary[]> = new Observable();
+  works$: Observable<WorkMetadata[]> = new Observable();
 
   displayFilters: boolean = false;
 
