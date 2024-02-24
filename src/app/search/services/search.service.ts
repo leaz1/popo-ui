@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { WorkSummary } from '../../shared/models/work-metadata.model';
+import { WorkMetadata } from '../../shared/models/work-metadata.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  search(searchTerm: string): Observable<WorkSummary[]> {
-    return this.http.get<WorkSummary[]>('/');
+  search(searchTerm: string): Observable<WorkMetadata[]> {
+    return this.http.get<WorkMetadata[]>('/');
   }
 }

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Tag } from '../models/tag.model';
 
 @Pipe({
   name: 'list',
@@ -6,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ListPipe implements PipeTransform {
 
-  transform(value: string[], ...args: unknown[]): unknown {
+  transform(value: string[] | Tag[], ...args: unknown[]): unknown {
     return value.join(', ');
   }
 

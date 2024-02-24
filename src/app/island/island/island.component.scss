@@ -1,4 +1,4 @@
 :host {
-    @apply flex flex-col;
-    width: 320px;
+    @apply bg-blue-800 rounded text-white shadow-sm overflow-hidden flex-1 flex items-stretch;
+    min-width: 320px;
 }

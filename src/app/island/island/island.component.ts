@@ -6,6 +6,8 @@ import { IslandDisplay } from '../../shared/models/island-display.enum';
 import { WorkComponent } from "../../work/work/work.component";
 import { WorkNavigatorComponent } from '../work-navigator/work-navigator.component';
 import { Work } from '../../shared/models/work.model';
+import { StateService } from '../../main/services/state.service';
+import { BrowseComponent } from '../../../browse/browse/browse.component';
 
 @Component({
     selector: 'popo-island',
@@ -16,9 +18,11 @@ import { Work } from '../../shared/models/work.model';
         CommonModule,
         MenuComponent,
         WorkNavigatorComponent,
+        BrowseComponent,
     ]
 })
 export class IslandComponent implements OnInit {
+  state$: Subject<string>;
   display$: BehaviorSubject<string> = new BehaviorSubject('menu');
 
   work: Work = {
@@ -123,7 +127,13 @@ stairs was full of them, and that was where he slept. `
 
 	}
 
+  constructor(private stateService: StateService) {}
+
   ngOnInit(): void {
-    this.display$.next('work');
+    this.state$ = this.stateService.getState$();
+  }
+
+  ngAfterViewInit(): void {
+    this.state$.next('out');
   }
 }

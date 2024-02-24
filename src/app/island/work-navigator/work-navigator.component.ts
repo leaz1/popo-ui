@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, effect } from '@angular/core';
 import { Work } from '../../shared/models/work.model';
+import { WorkService } from '../../work/services/work.service';
 
 @Component({
   selector: 'popo-work-navigator',
@@ -11,5 +12,11 @@ import { Work } from '../../shared/models/work.model';
 export class WorkNavigatorComponent {
   @Input() work: Work | null = null;
 
-  
+  constructor(private workService: WorkService) {
+    
+  }
+
+  goToChapter(seq: number) {
+    this.workService.setActiveChapter(seq);
+  }
 }

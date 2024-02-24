@@ -4,7 +4,7 @@
             <section>
                 <h1>{{ work.metadata.title }}</h1>
             </section>
-            <section class="bg-orange-50">
+            <section class="bg-orange-50 px-8 py-4 text-sm">
                 @for (ch of work.contents.chapters; track null) {
                     <h2>{{ ch.title }}</h2>
                     {{ ch.text }}

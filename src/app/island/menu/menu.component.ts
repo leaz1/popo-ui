@@ -17,6 +17,8 @@ export class MenuComponent {
   items: MenuItem[] = [
     { name: 'home', path: '/home'},
     { name: 'search', path: '/search'},
-    { name: 'write', path: '/write'},
+    { name: 'about', path: '/about'},
+    { name: 'me', path: '/me'},
+    // { name: 'write', path: '/write'},
   ]
 }

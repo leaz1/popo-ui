@@ -1,7 +1,14 @@
-@if (work) {
-    @for (ch of work.contents.chapters; track null) {
-        <div>
-            {{ ch.title }}
-        </div>
+<div class="p-1">
+    @if (work) {
+        <ul>
+            @for (ch of work.contents.chapters; track null; let idx = $index) {
+                <li>
+                    <div (click)="goToChapter(idx)" class="cursor-pointer px-2 my-1 text-right text-sm">
+                        {{ ch.title }}
+                    </div>
+                </li>
+            }
+        </ul>
     }
-}
+</div>
+

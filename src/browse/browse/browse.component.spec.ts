@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShellComponent } from './shell.component';
+import { BrowseComponent } from './browse.component';
 
-describe('ShellComponent', () => {
-  let component: ShellComponent;
-  let fixture: ComponentFixture<ShellComponent>;
+describe('BrowseComponent', () => {
+  let component: BrowseComponent;
+  let fixture: ComponentFixture<BrowseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShellComponent]
+      imports: [BrowseComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ShellComponent);
+    fixture = TestBed.createComponent(BrowseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

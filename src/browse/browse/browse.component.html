@@ -1,0 +1,7 @@
+<div class="w-full flex flex-wrap p-4">
+    @for (tag of (tags$); track $index) {
+        <a [routerLink]="getRouterLinkOfTag(tag)" routerLinkActive="active" class="m-2 text-xl">
+            #{{ tag.name }}
+        </a>
+    }
+</div>

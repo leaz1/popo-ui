@@ -2,7 +2,7 @@
     <ul>
         @for (item of items; track null) {
             <li>
-                <a [routerLink]="item.path" routerLinkActive="active" class="">
+                <a [routerLink]="item.path" routerLinkActive="active" class="text-right">
                     <span>{{ item.name | uppercase }}</span>
                 </a>
             </li>

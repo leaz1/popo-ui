@@ -1,7 +1,11 @@
-<div class="">
-    <popo-island></popo-island>
+<div class="bg-sky-100 flex flex-grow h-0 gap-4 p-4 box-border">
+    <popo-island
+        [ngClass]="(state$ | async) === 'out' ? 'flex-1 mb-16' : 'w-80'"
+    ></popo-island>
+    @if ((state$ | async) === 'in') {
+        <div class="flex-1">
+            <router-outlet></router-outlet>
+        </div>
+    }
 </div>
-<div class="flex-1">
-    <!-- <router-outlet></router-outlet> -->
-    <popo-work></popo-work>
-</div>
+

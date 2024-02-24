@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { WorkContents } from '../../shared/models/work-contents.model';
 import { Work } from '../../shared/models/work.model';
+import { WorkChapter } from '../../shared/models/work-chapter.model';
+import { WorkService } from '../services/work.service';
+import { computed } from '@angular/core';
+import { effect } from '@angular/core';
 
 @Component({
 	selector: 'popo-work',
@@ -111,7 +115,14 @@ stairs was full of them, and that was where he slept. `
 		},
 
 	}
+  activeChapter: Signal<any>;
+
+  constructor(private workService: WorkService) {}
 
 	ngOnInit() {
+    this.activeChapter = computed(() => {
+      return this.workService.getActiveChapter()();
+    });
+    
 	}
 }

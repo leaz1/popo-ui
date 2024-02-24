@@ -1,10 +1,21 @@
-<div class="bg-blue-800 rounded text-white shadow-md">
-    @switch (display$ | async) {
-        @case ('menu') {
-            <popo-menu></popo-menu>
+<div class="flex flex-col w-80">
+    <div class="flex-1">
+        @switch (display$ | async) {
+            @case ('menu') {
+                <popo-menu></popo-menu>
+            }
+            @case ('work') {
+                <popo-work-navigator [work]="work"></popo-work-navigator>
+            }
         }
-        @case ('work') {
-            <popo-work-navigator [work]="work"></popo-work-navigator>
-        }
-    }
+    </div>
+    <div class="w-full">
+        <button class="w-full px-4 py-2 hover:bg-white hover:text-blue-800 transition-all uppercase text-left font-medium">WRITE</button>
+    </div>
 </div>
+@if ((state$ | async) === 'out') {
+    <div class="flex-1">
+        <popo-browse></popo-browse>
+    </div>
+}
+
