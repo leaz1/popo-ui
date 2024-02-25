@@ -1,6 +1,7 @@
 <div class="bg-sky-100 flex flex-grow h-0 gap-4 p-4 box-border">
     <popo-island
-        [ngClass]="(state$ | async) === 'out' ? 'flex-1 mb-16' : 'w-80'"
+        class="transition-all duration-200"
+        [ngClass]="(state$ | async) === 'out' ? 'flex-1 mb-16' : 'w-80 h-fit mb-16'"
     ></popo-island>
     @if ((state$ | async) === 'in') {
         <div class="flex-1">

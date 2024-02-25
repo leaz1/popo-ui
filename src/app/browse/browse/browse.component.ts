@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Tag } from '../../app/shared/models/tag.model';
+import { Tag } from '../../shared/models/tag.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 

@@ -7,7 +7,7 @@ import { WorkComponent } from "../../work/work/work.component";
 import { WorkNavigatorComponent } from '../work-navigator/work-navigator.component';
 import { Work } from '../../shared/models/work.model';
 import { StateService } from '../../main/services/state.service';
-import { BrowseComponent } from '../../../browse/browse/browse.component';
+import { BrowseComponent } from '../../browse/browse/browse.component';
 
 @Component({
     selector: 'popo-island',
@@ -135,5 +135,9 @@ stairs was full of them, and that was where he slept. `
 
   ngAfterViewInit(): void {
     this.state$.next('out');
+  }
+
+  setState$(state: string) {
+    this.state$.next(state);
   }
 }
